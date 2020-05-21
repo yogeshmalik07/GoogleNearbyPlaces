@@ -219,17 +219,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             buildGoogleApiClien();
             mMap.setMyLocationEnabled(true);
         }
-        // Make event click on Marker
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                //When user select marker , just get result of place and assign to static variable
-                Common.currentResult = currentPlace.getResults()[Integer.parseInt(marker.getSnippet())];
-                //Start new Activity
-                    startActivity(new Intent(MapsActivity.this,ViewPlace.class));
-                return true;
-            }
-        });
+       
 
     }
 
